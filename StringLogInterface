@@ -1,0 +1,55 @@
+//----------------------------------------------------------------------
+// StringLogInterface.java     by Dale/Joyce/Weems
+//
+// Interface for a class that implements a log of Strings.
+// A log "remembers" the elements placed into it.
+//
+// A log must have a "name".
+//----------------------------------------------------------------------
+
+public interface StringLogInterface
+{
+  void insert(String element);
+  // Precondition:   This StringLog is not full.
+  //
+  // Places element into this StringLog.
+  
+  boolean uniqueInsert(String element);
+  //inserts an element in the log unless an identical string already exists
+  //in which case it has no effect on the log. If it does insert the string,
+  //the method returns true, otherwise it returns false
+
+  boolean delete(String element);
+  //Delete one instance of element from the StringLog
+  //Returns true if the element is deleted, otherwise returns false.
+  
+  int deleteAll(String element);
+  //deletes all occurrences of element from string log and returns integer
+  //indicating the number of deletions
+  
+  boolean isFull();
+  // Returns true if this StringLog is full, otherwise returns false.
+  
+  boolean isEmpty();
+  //Returns true if the StringLog is empty, and false otherwise.
+
+  int size();
+  // Returns the number of Strings in this StringLog.
+
+  boolean contains(String element);
+  // Returns true if element is in this StringLog,
+  // otherwise returns false.
+  // Ignores case differences when doing string comparison.
+  
+  int howMany(String element);
+  //Method returns an integer indicating how many times an element occurs
+
+  void clear();
+  // Makes this StringLog empty.
+
+  String getName();
+  // Returns the name of this StringLog.
+
+  String toString();
+  // Returns a nicely formatted string representing this StringLog.
+}
